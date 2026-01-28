@@ -21,8 +21,13 @@ public class StockService{
     }
 
     //ID ile hisse bulsun
-    public Optional<Stock> getStockByID(Long id){
+    public Optional<Stock> getStockById(Long id){
         return stockRepository.findById(id);
+    }
+
+    // Symbol ile hisse bul (örn: "THYAO")
+    public Optional<Stock> getStockBySymbol(String symbol) {
+        return stockRepository.findBySymbol(symbol.toUpperCase());
     }
 
     //hisse ekleyebilelim
